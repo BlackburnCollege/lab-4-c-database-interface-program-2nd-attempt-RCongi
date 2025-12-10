@@ -25,6 +25,11 @@ int main()
 			createDatabase();
 		}
 
+		else if (response == 2)
+		{
+			importData();
+		}
+
 	} while (response != 6);
 }
 

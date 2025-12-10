@@ -136,6 +136,12 @@
     <ClInclude Include="MenuActions.h" />
     <ClInclude Include="sqlite3.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Cards.csv" />
+    <None Include="Players.csv" />
+    <None Include="Sets.csv" />
+    <None Include="Teams.csv" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

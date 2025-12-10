@@ -36,4 +36,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Players.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Sets.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Cards.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Teams.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
