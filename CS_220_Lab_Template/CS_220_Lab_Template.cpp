@@ -30,6 +30,16 @@ int main()
 			importData();
 		}
 
+		else if (response == 3)
+		{
+			simple();
+		}
+
+		else if (response == 4)
+		{
+
+		}
+
 	} while (response != 6);
 }
 

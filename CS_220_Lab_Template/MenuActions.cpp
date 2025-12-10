@@ -178,9 +178,43 @@ void importData()
 	sqlite3_close(db);
 }
 
+
+static int callback(void* data, int argc, char** argv, char** azColName)
+	{
+		int i;
+
+		for (i = 0; i < argc; i++)
+		{
+			std::cout << azColName[i] << " = ";
+			if (argv[i] == NULL)
+			{
+				std::cout << "NULL\n";
+			}
+			else
+			{
+				std::cout << argv[i] << '\n';;
+			}
+		}
+
+		std::cout << "\n";
+		return 0;
+	}
+
 void simple()
 {
+	
 
+
+	sqlite3* db;
+	char* errMsg = nullptr;
+
+	if (sqlite3_open("baseballCard.db", &db)) 
+	{
+		cerr << "Error opening DB: " << sqlite3_errmsg(db) << endl;
+	}
+
+	string query = "SELECT * FROM Cards;";
+	sqlite3_exec(db, query.c_str(), callback, nullptr, &errMsg);
 }
 void complex()
 {
