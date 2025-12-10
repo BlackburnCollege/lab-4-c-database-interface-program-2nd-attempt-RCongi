@@ -127,10 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CreateDB.cpp" />
     <ClCompile Include="CS_220_Lab_Template.cpp" />
     <ClCompile Include="MenuActions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CreateDB.h" />
     <ClInclude Include="MenuActions.h" />
     <ClInclude Include="sqlite3.h" />
   </ItemGroup>

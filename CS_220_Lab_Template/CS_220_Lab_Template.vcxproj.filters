@@ -21,12 +21,18 @@
     <ClCompile Include="MenuActions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CreateDB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sqlite3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuActions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateDB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
