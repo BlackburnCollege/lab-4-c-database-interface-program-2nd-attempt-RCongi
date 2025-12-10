@@ -37,7 +37,12 @@ int main()
 
 		else if (response == 4)
 		{
+			complex();
+		}
 
+		else if (response == 5)
+		{
+			UserDefined();
 		}
 
 	} while (response != 6);

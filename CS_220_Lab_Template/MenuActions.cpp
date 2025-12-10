@@ -202,9 +202,6 @@ static int callback(void* data, int argc, char** argv, char** azColName)
 
 void simple()
 {
-	
-
-
 	sqlite3* db;
 	char* errMsg = nullptr;
 
@@ -214,14 +211,47 @@ void simple()
 	}
 
 	string query = "SELECT * FROM Cards;";
+
 	sqlite3_exec(db, query.c_str(), callback, nullptr, &errMsg);
+
+	sqlite3_close(db);
 }
 void complex()
 {
+	sqlite3* db;
+	char* errMsg = nullptr;
 
+	if (sqlite3_open("baseballCard.db", &db))
+	{
+		cerr << "Error opening DB: " << sqlite3_errmsg(db) << endl;
+	}
+
+	string query = "SELECT Players.FirstName, Players.LastName, Teams.TeamName\n"
+		"FROM Cards\n"
+		"INNER JOIN Players ON Cards.PlayerID = Players.PlayerID, Teams ON Cards.TeamID = Teams.TeamID;";
+
+	sqlite3_exec(db, query.c_str(), callback, nullptr, &errMsg);
+
+	sqlite3_close(db);
 }
 
 void UserDefined()
 {
+	sqlite3* db;
+	char* errMsg = nullptr;
 
+	if (sqlite3_open("baseballCard.db", &db))
+	{
+		cerr << "Error opening DB: " << sqlite3_errmsg(db) << endl;
+	}
+
+	string query;
+	cin.ignore();
+	cout << "Enter your requested query: ";
+
+	getline(cin, query);
+
+	sqlite3_exec(db, query.c_str(), callback, nullptr, &errMsg);
+
+	sqlite3_close(db);
 }
